@@ -24,6 +24,13 @@ LISTEN_IP = "192.168.10.250"
 HTTP_LISTEN_PORT = 8000
 ```
 
+HALE needs to listen on an IP address that is on the same network (or VLAN) as the Amazon Echo device. SSDP/UPNP discovery over multicast is used by the Echo to find the Philips Hue hubs that HALE is pretending to be. If you are using a firewall on the system HALE is running on then make sure to allow the needed traffic through the firewall. The following are example Linux iptables rules:
+
+```
+iptables -A INPUT -i wlan1 -m conntrack --ctstate NEW -p tcp --dport 8000 -j ACCEPT
+iptables -A INPUT -i wlan1 -m conntrack --ctstate NEW -p udp -d 239.255.255.250 --dport 1900 -j ACCEPT
+```
+
 Start the HALE script and it will reach out to the Home Assistant API and discover devices to be exposed to the Amazon Echo.
 
 In order for a Home Assistant entity to be made available to voice commands via the Echo the Home Assistant entity will need to be customized to include a *echo* value set to true in the HA configuration file. Additionally you may optionally set an *echo_name* to give it a more voice command friendly name to use.
