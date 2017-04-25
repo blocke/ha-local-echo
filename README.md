@@ -1,4 +1,4 @@
-# This project has been abandoned. Home Assistant now includes built in Hue hub emulation which makes this project now pointless.
+# This project has been abandoned. Home Assistant now includes built in Hue hub emulation which replaces this project.
 
 Please see: <https://home-assistant.io/components/emulated_hue/> or an alternative project is <https://github.com/home-assistant/homebridge-homeassistant>
 
