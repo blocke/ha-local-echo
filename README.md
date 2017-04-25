@@ -1,3 +1,7 @@
+# This project has been abandoned. Home Assistant now includes built in Hue hub emulation which makes this project now pointless.
+
+Please see: <https://home-assistant.io/components/emulated_hue/> or an alternative project is <https://github.com/home-assistant/homebridge-homeassistant>
+
 # ha-local-echo
 Home automation tool to allow you to control your devices in Home Assistant with voice commands from your Amazon Echo. HA-Local-Echo (HALE) integrates with Home Assistant through it's API and emulates a subset of the Philips Hue local network API for the Echo. This emulation of the Hue API means Amazon Echo can discover and control what it thinks are light bulbs but are really Home Assistant device entities.
 
